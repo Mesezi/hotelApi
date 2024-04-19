@@ -10,7 +10,7 @@ app.use(express.json());
 app.use('/api', routes)
 
 // console.log(mongoose)
-mongoose.connect('mongodb+srv://mesezi:admin-mesezi@hotel-api.ddjdkpb.mongodb.net/?retryWrites=true&w=majority&appName=hotel-api').then(()=>{
+mongoose.connect(process.env.MONGO_LINK).then(()=>{
     console.log('connected')
     app.listen(4000)
 }).catch((err)=>console.log(err))
